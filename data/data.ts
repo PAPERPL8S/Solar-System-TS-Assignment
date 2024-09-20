@@ -1,3 +1,5 @@
+import * as types from "../types/types";
+
 export const data = {
   planets: [
     {

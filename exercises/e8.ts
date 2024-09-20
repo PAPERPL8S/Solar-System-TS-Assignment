@@ -1,7 +1,28 @@
 // SPACE DATA EXERCISE 8
 // Return a Planet by a given moon name
 //  must have destructured parameters
-export function findPlanetByMoon({ planets, moonName }) {}
+
+interface findPlanetByMoonParams {
+  planets: Planet[];
+  moonName: string;
+}
+
+interface Planet {
+  name: string;
+  moons?: string[];
+}
+
+export function findPlanetByMoon({
+  planets,
+  moonName,
+}: findPlanetByMoonParams): Planet | undefined {
+  return planets.find((planet) => {
+    return (
+      planet.moons &&
+      planet.moons.some((moon) => moon.toLowerCase() === moonName.toLowerCase())
+    );
+  });
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-8"

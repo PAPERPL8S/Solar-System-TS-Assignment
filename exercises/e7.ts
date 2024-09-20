@@ -1,6 +1,20 @@
 // SPACE DATA EXERCISE 7
 // Return an array of all Planets names that have moons
-export function getPlanetsWithMoons(planets) {}
+
+interface Planet {
+  name: string;
+  moonsCount: number;
+}
+
+interface GetPlanetsWithMoons {
+  (planets: Planet[]): string[];
+}
+
+export const getPlanetsWithMoons: GetPlanetsWithMoons = (planets) => {
+  return planets
+    .filter((planet) => planet.moonsCount > 0)
+    .map((planet) => planet.name);
+};
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

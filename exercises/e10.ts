@@ -2,11 +2,8 @@
 // Return a given asteroid object of data
 // make sure that you destructure your parameters
 
-interface Asteroid {
-  name: string;
-  diameter: number;
-  moons?: string[];
-}
+import { Asteroid } from "../types/types";
+
 export function getAsteroidDataByName({
   allData,
   asteroidName,

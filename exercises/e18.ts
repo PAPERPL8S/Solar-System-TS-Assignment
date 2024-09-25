@@ -3,9 +3,7 @@
 // Return example: 1902
 // Hint: use a Map data structure instead of an object if you want typescript to be happy
 
-interface Asteroid {
-  discoveryYear: number;
-}
+import { Asteroid } from "../types/types";
 
 export function getGreatestDiscoveryYear(asteroids: Asteroid[]) {
   const map = new Map();

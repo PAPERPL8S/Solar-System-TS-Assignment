@@ -2,11 +2,9 @@
 // Return an array of all Planets' names
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-interface Planet {
-  name: string;
-}
+import { PlanetData } from "../types/types";
 
-export function getPlanetNames(planets: Planet[]): string[] {
+export function getPlanetNames(planets: PlanetData[]) {
   return planets.map((planet) => planet.name);
 }
 

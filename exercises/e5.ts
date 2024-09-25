@@ -2,15 +2,10 @@
 // Return an array with all Planets' names with a massValue greater or equal to a given number (1-7)
 // Return example: ['name1', 'name2', ... , 'nameN']
 // Note: This input should be destructured from the function parameter
-interface Planet {
-  name: string;
-  mass: {
-    massValue: number;
-  };
-}
 
+import { PlanetData } from "../types/types";
 interface Params {
-  planets: Planet[];
+  planets: PlanetData[];
   greaterThanOrEqualTo: number;
 }
 

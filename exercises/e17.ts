@@ -1,6 +1,6 @@
 export const minBy = <T>(
   array: T[],
-  cb: (item: T) => number,
+  cb: (item: T) => number | string,
 ): T | undefined => {
   if (array.length === 0) return undefined;
 
@@ -11,7 +11,7 @@ export const minBy = <T>(
 
 export const maxBy = <T>(
   array: T[],
-  cb: (item: T) => number,
+  cb: (item: T) => number | string,
 ): T | undefined => {
   if (array.length === 0) return undefined;
 

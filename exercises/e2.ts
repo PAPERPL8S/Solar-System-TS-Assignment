@@ -2,15 +2,9 @@
 // Return an array of all Asteroids' names
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-interface Asteroid {
-  name: string;
-}
+import { Asteroid } from "../types/types";
 
-interface GetAsteroidNames {
-  (asteroids: Asteroid[]): string[];
-}
-
-export const getAsteroidNames: GetAsteroidNames = (asteroids) => {
+export const getAsteroidNames = (asteroids: Asteroid[]) => {
   return asteroids.map((asteroid) => asteroid.name);
 };
 

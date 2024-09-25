@@ -1,10 +1,7 @@
 // SPACE DATA EXERCISE 6
 // Return an array with all asteroids discovered after a given year
 
-interface Asteroid {
-  name: string;
-  discoveryYear: number;
-}
+import { Asteroid } from "../types/types";
 
 export function getAsteroidsDiscoveredAfterYear(
   asteroids: Asteroid[],

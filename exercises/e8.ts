@@ -2,20 +2,17 @@
 // Return a Planet by a given moon name
 //  must have destructured parameters
 
-interface findPlanetByMoonParams {
-  planets: Planet[];
-  moonName: string;
-}
+import { PlanetData } from "../types/types";
 
-interface Planet {
-  name: string;
-  moons?: string[];
+interface findPlanetByMoonParams {
+  planets: PlanetData[];
+  moonName: string;
 }
 
 export function findPlanetByMoon({
   planets,
   moonName,
-}: findPlanetByMoonParams): Planet | undefined {
+}: findPlanetByMoonParams): PlanetData | undefined {
   return planets.find((planet) => {
     return (
       planet.moons &&

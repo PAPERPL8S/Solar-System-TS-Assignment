@@ -2,16 +2,9 @@
 // Return the sum of all moons for all planets
 // Return example: 42
 
-interface Planet {
-  name: string;
-  moonsCount: number;
-}
+import { Alldata } from "../types/types";
 
-interface Data {
-  planets: Planet[];
-}
-
-export const allPlanetsMoonsCount = (data: Data): number => {
+export const allPlanetsMoonsCount = (data: Alldata): number => {
   return data.planets.reduce(
     (acc, planet) => acc + (planet.moonsCount || 0),
     0,

@@ -1,18 +1,10 @@
 // SPACE DATA EXERCISE 7
 // Return an array of all Planets names that have moons
+import { PlanetData } from "../types/types";
 
-interface Planet {
-  name: string;
-  moonsCount: number;
-}
-
-interface GetPlanetsWithMoons {
-  (planets: Planet[]): string[];
-}
-
-export const getPlanetsWithMoons: GetPlanetsWithMoons = (planets) => {
+export const getPlanetsWithMoons = (planets: PlanetData[]) => {
   return planets
-    .filter((planet) => planet.moonsCount > 0)
+    .filter((planet) => planet.moonsCount && planet.moonsCount > 0)
     .map((planet) => planet.name);
 };
 

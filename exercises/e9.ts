@@ -2,15 +2,9 @@
 // Return the data object of the planet "Earth"
 // Return example: { key1: value1, key2: value2, ... , keyN: valueN }
 
-interface Planet {
-  name: string;
-}
+import { Alldata, PlanetData } from "../types/types";
 
-interface Data {
-  planets: Planet[];
-}
-
-export const findEarthData = (data: Data): Planet | undefined => {
+export const findEarthData = (data: Alldata): PlanetData | undefined => {
   return data.planets.find((planet) => planet.name === "Earth");
 };
 

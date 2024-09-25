@@ -1,13 +1,11 @@
 // SPACE DATA EXERCISE 11
 // Return an array of Planets with less than 10 moons
 // include planets with 0 moons
-interface Planet {
-  name: string;
-  moonsCount: number;
-}
 
-export const lowMoonsPlanets = (planets: Planet[]): Planet[] => {
-  return planets.filter((planet) => planet.moonsCount < 10);
+import { PlanetData } from "../types/types";
+
+export const lowMoonsPlanets = (planets: PlanetData[]) => {
+  return planets.filter((planet) => (planet.moonsCount ?? 0) < 10);
 };
 
 // === TEST YOURSELF ===

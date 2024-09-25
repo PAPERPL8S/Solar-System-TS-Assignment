@@ -1,28 +1,20 @@
 import { describe, expect, it } from "vitest";
 import { getPlanetsWithNoMoons } from "../exercises/e15";
-import { data as importedData } from "../data/data";
+import { data } from "../data/data";
 
-const localData = {
-  planets: [
-    { name: "Mercure", moonsCount: 0 },
-    { name: "Vénus", moonsCount: 0 },
-    { name: "Earth", moonsCount: 1 },
-    { name: "Mars", moonsCount: 2 },
-    { name: "Jupiter", moonsCount: 79 },
-  ],
-};
-
-describe("planetsWithNoMoons", () => {
+describe("getPlanetsWithNoMoons", () => {
   it("Should exist", () => {
     expect(getPlanetsWithNoMoons).toBeInstanceOf(Function);
   });
-  it("There should be 2 items in the array", () => {
-    expect(getPlanetsWithNoMoons(localData.planets).length).toEqual(2);
+
+  it("There should be 2 planets with no moons", () => {
+    const planetsWithNoMoons = getPlanetsWithNoMoons(data.planets);
+    expect(planetsWithNoMoons.length).toEqual(2);
   });
-  it("The returned planet objects should be mercure and Venus", () => {
-    expect(getPlanetsWithNoMoons(localData.planets).map((p) => p.name)).toEqual([
-      "Mercure",
-      "Vénus",
-    ]);
+
+  it("The returned planet objects should be Mercure and Vénus", () => {
+    const planetsWithNoMoons = getPlanetsWithNoMoons(data.planets);
+    const planetNames = planetsWithNoMoons.map((planet) => planet.name);
+    expect(planetNames).toEqual(["Mercure", "Vénus"]);
   });
 });

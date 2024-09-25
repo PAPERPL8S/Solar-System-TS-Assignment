@@ -2,11 +2,8 @@
 // Return the sum of orbital periods of all asteroids
 // Return example: 234234.234
 
-interface Asteroid {
-  name: string;
-  discoveryYear: number;
-  orbitalPeriod: number;
-}
+import { Asteroid } from "../types/types";
+
 export function getOrbitalPeriodsSum(asteroids: Asteroid[]) {
   return asteroids.reduce((acc, asteroid) => acc + asteroid.orbitalPeriod, 0);
 }
